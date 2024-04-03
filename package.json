@@ -1,0 +1,42 @@
+{
+  "name": "school_management_system",
+  "version": "1.0.0",
+  "description": "Mern Stack school_mgt_system",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nedbleezy/sch_mgt-system_backend.git"
+  },
+  "keywords": [
+    "School",
+    "management",
+    "system",
+    "Mern",
+    "Stack"
+  ],
+  "author": "NedbleezyTech (backend)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nedbleezy/sch_mgt-system_backend/issues"
+  },
+  "homepage": "https://github.com/Nedbleezy/sch_mgt-system_backend#readme",
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.3",
+    "nodemailer": "^6.9.13",
+    "winston": "^3.13.0"
+  }
+}
