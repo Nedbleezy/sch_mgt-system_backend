@@ -40,10 +40,9 @@ app.use('/api/v1/school/verify', VerifyTokenRoutes);
 //listen on
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
-//unhandled errors
-['uncaughtException', 'unhandledRejection'].forEach((error) =>
-  process.on(error, () => {
-    console.error(error);
-    process.exit(1);
-  })
-);
+process.on('unhandledRejection', (err) => {
+  console.log(`unhandledRejection ${err}`);
+});
+process.on('uncaughtException', (err) => {
+  console.log(`uncaughtException ${err}`);
+});

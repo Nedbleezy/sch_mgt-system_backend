@@ -1,10 +1,5 @@
 import SchoolModel from '../models/SchoolRegModel.js';
 import Token from '../models/TokenModel.js';
-import path from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const VerifyToken = async (req, res) => {
   try {
@@ -21,7 +16,7 @@ const VerifyToken = async (req, res) => {
 
     const newUpdate = await SchoolModel.findByIdAndUpdate(
       { _id: school._id },
-      { verifiedEmail: true, isAdmin: true },
+      { verifiedEmail: true },
       { new: true }
     );
 
@@ -29,11 +24,7 @@ const VerifyToken = async (req, res) => {
 
     newUpdate.password = undefined;
 
-    //res.sendFile('/index.html', path.join(__dirname, 'public'));
-
     res.status(200).json({ message: 'email verified sucessfully, please login' });
-
-    //res.redirect('/localhost:3000/login');
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
